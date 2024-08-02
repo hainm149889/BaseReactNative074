@@ -1,0 +1,40 @@
+{
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-remove-console"
+      ]
+    }
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "alias": {
+          "@type": "./src/type",
+          "@assets": "./src/assets",
+          "@svg": "./src/assets/svg",
+          "@utils": "./src/utils",
+          "@features": "./src/features",
+          "@components": "./src/components",
+          "@translations": "./src/translations",
+          "@model": "./src/model",
+          "@navigation": "./src/navigation",
+          "@store": "./src/redux/store",
+          "@redux-slice": "./src/redux/action-slice",
+          "@redux-selector": "./src/redux/selector",
+          "@redux-action-type": "./src/redux/action-type",
+          "@redux": "./src/redux",
+          "@theme": "./src/themes",
+          "@services": "./src/services",
+          "@screens": "./src/screens",
+          "@hooks": "./src/hooks",
+          "@native-module": "./src/native-module"
+        }
+      }
+    ]
+  ]
+}

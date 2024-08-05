@@ -3,9 +3,9 @@ import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {UnistylesRuntime} from 'react-native-unistyles';
 import {useStyles, createStyleSheet} from '@theme';
 import {Images} from '@assets/images';
-import {ActiveOpacity} from '@utils/constant';
 import {goBack} from '@navigation/navigation-service';
 import {scale} from '@utils/scale';
+import {ActiveOpacity} from '@utils/constant';
 
 export const NotFound = () => {
   const {styles} = useStyles(styleSheet);

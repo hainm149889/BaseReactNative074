@@ -4,7 +4,7 @@ import {createStyleSheet, useStyles} from '@theme';
 import {ms} from '@theme/my-style';
 import {navigate} from '@navigation/navigation-service';
 import {APP_SCREEN} from '@navigation/screen-types';
-import {Header} from '@components/Header';
+import {Header} from '@components/header';
 import {ActiveOpacity} from '@utils/constant';
 
 export const HomeScreen = () => {

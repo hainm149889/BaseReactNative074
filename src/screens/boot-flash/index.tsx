@@ -14,15 +14,11 @@ export const Splash = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    console.log('first');
-
     const timeIdSplash = setTimeout(async () => {
       await BootSplash.hide({fade: true});
     }, 100);
 
     const timeIdMounted = setTimeout(() => {
-      console.log('first 222');
-
       setIsMounted(true);
     }, 3500);
 

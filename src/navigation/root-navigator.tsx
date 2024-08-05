@@ -13,6 +13,7 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 export const RootNavigation = () => {
   const isMountedSplash = useSelector(selectIsMountedSplash);
+  console.log('🚀 ~ RootNavigation ~ isMountedSplash:', isMountedSplash);
 
   return (
     <RootStack.Navigator

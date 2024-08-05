@@ -11,6 +11,7 @@ const splashSlice = createSlice({
   initialState: initialState,
   reducers: {
     setIsMounted: (state, {payload}: PayloadAction<boolean>) => {
+      console.log('state: ', state);
       state.isMounted = payload;
     },
   },

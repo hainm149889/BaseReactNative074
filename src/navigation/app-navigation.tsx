@@ -4,6 +4,7 @@ import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {navigationRef} from './navigation-service';
 import {RootNavigation} from './root-navigator';
+import {RXStore} from '@utils/redux';
 
 export const AppContainer = () => {
   // render
@@ -11,6 +12,7 @@ export const AppContainer = () => {
     <NavigationContainer ref={navigationRef}>
       <StatusBar translucent backgroundColor={'transparent'} />
       <RootNavigation />
+      <RXStore />
     </NavigationContainer>
   );
 };

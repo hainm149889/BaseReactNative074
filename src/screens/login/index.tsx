@@ -73,7 +73,6 @@ const styleSheet = createStyleSheet(
     footerContainer: {
       padding: spacings[12],
       paddingBottom: UnistylesRuntime.insets.bottom + spacings[12],
-      backgroundColor: colors.White,
       columnGap: spacings[12],
       flexDirection: 'row',
       ...shadows.main,

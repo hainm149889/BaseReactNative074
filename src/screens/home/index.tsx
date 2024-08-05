@@ -11,7 +11,7 @@ export const HomeScreen = () => {
   const {styles} = useStyles(styleSheet);
 
   const navNotFoundScreen = () => {
-    navigate(APP_SCREEN.NOT_FOUND);
+    navigate(APP_SCREEN.LOGIN_SCREEN);
   };
 
   return (

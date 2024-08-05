@@ -34,6 +34,8 @@
 		91AD2BF62C60738B00001F8F /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91AD2BE32C60738B00001F8F /* SimpleLineIcons.ttf */; };
 		91AD2BF72C60738B00001F8F /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91AD2BE42C60738B00001F8F /* FontAwesome6_Brands.ttf */; };
 		91AD2BF82C60738B00001F8F /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91AD2BE52C60738B00001F8F /* MaterialIcons.ttf */; };
+		0C3A1FF38F3A451C966DEB1F /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E5DD3587A247BCA42D8F5C /* BootSplash.storyboard */; };
+		CBD5B895BD1E410091A18231 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33F07FC49D4647E4B51116A4 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		91AD2BE52C60738B00001F8F /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F69780AB160C2DECE9F3BA95 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = test01/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		D1E5DD3587A247BCA42D8F5C /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "test01/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		33F07FC49D4647E4B51116A4 /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "test01/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				F69780AB160C2DECE9F3BA95 /* PrivacyInfo.xcprivacy */,
+				D1E5DD3587A247BCA42D8F5C /* BootSplash.storyboard */,
+				33F07FC49D4647E4B51116A4 /* Colors.xcassets */,
 			);
 			name = test01;
 			sourceTree = "<group>";
@@ -334,6 +340,8 @@
 				91AD2BF62C60738B00001F8F /* SimpleLineIcons.ttf in Resources */,
 				91AD2BF32C60738B00001F8F /* Zocial.ttf in Resources */,
 				8770B72574186C430AE12A5B /* PrivacyInfo.xcprivacy in Resources */,
+				0C3A1FF38F3A451C966DEB1F /* BootSplash.storyboard in Resources */,
+				CBD5B895BD1E410091A18231 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

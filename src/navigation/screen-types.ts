@@ -6,6 +6,7 @@ export enum APP_SCREEN {
   PROFILE_SCREEN = 'PROFILE_SCREEN',
   NOT_FOUND = 'NOT_FOUND',
   LOGIN_SCREEN = 'LOGIN_SCREEN',
+  SPLASH_SCREEN = 'SPLASH_SCREEN',
 }
 
 export type RootStackParamList = {
@@ -14,6 +15,7 @@ export type RootStackParamList = {
   [APP_SCREEN.PROFILE_SCREEN]: undefined;
   [APP_SCREEN.NOT_FOUND]: undefined;
   [APP_SCREEN.LOGIN_SCREEN]: undefined;
+  [APP_SCREEN.SPLASH_SCREEN]: undefined;
 };
 
 export type StackScreenProps<T extends keyof RootStackParamList> =

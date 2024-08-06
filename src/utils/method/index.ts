@@ -31,3 +31,22 @@ export const execFunc = <Fn extends (...args: any[]) => any>(
     func(...args);
   }
 };
+
+/**
+ * return true when success and false when error
+ */
+export function validResponse<T = any>(response: T) {
+  //@ts-ignore
+  if (!response.data?.Success) {
+    // TODO: handle error
+    return false;
+  }
+
+  return true;
+}
+
+// export const logout = async () => {
+//   dispatch({ type: Actions.LOGOUT });
+//   await remove(StorageKey.TOKEN);
+//   await remove(StorageKey.USER_AGENT_ID);
+// };

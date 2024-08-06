@@ -1,4 +1,6 @@
+import {scale} from '@utils/scale';
 import {StyleSheet} from 'react-native';
+import {UnistylesRuntime} from 'react-native-unistyles';
 
 export const HairlineWidth = Math.min(StyleSheet.hairlineWidth, 0.333);
 export const ActiveOpacity = 0.8;
@@ -10,3 +12,5 @@ export const HitSlop = {
   Small: 4,
   SmallInset: {top: 4, bottom: 4, left: 4, right: 4},
 };
+
+export const ModalWidth = UnistylesRuntime.screen.width - scale(48);

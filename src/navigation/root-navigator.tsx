@@ -31,14 +31,14 @@ export const RootNavigation = () => {
       )}
       <RootStack.Group>
         <RootStack.Screen
+          name={APP_SCREEN.LOGIN_SCREEN}
+          component={LoginScreen}
+        />
+        <RootStack.Screen
           name={APP_SCREEN.BOTTOM_TAB_NAV}
           component={BottomTabNavigation}
         />
         <RootStack.Screen name={APP_SCREEN.NOT_FOUND} component={NotFound} />
-        <RootStack.Screen
-          name={APP_SCREEN.LOGIN_SCREEN}
-          component={LoginScreen}
-        />
       </RootStack.Group>
     </RootStack.Navigator>
   );

@@ -2,9 +2,12 @@ import {Images} from '@assets/images';
 import {Header} from '@components/header';
 import {navigate} from '@navigation/navigation-service';
 import {APP_SCREEN, RootStackParamList} from '@navigation/screen-types';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {authenticationActions} from '@redux-slice';
 import {createStyleSheet, useStyles} from '@theme';
 import {AntIcon, FeatherIcon, IoniconsIcon} from '@theme/vector-icons';
 import {ActiveOpacity, HairlineWidth, HitSlop} from '@utils/constant';
+import {dispatch} from '@utils/redux';
 import {scale} from '@utils/scale';
 import React, {useState} from 'react';
 import {Controller, FormProvider, useForm} from 'react-hook-form';
@@ -18,7 +21,6 @@ import {
 } from 'react-native';
 import {UnistylesRuntime} from 'react-native-unistyles';
 import {LoginForm} from './type';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 export const LoginScreen = ({
   route,
@@ -28,7 +30,7 @@ export const LoginScreen = ({
     theme: {colors},
   } = useStyles(styleSheet);
 
-  const {username, password} = route.params.infoLogin;
+  const data = route.params;
 
   const [viewPass, setViewPass] = useState(false);
   const [isRememberAccount, setIsRememberAccount] = useState(true);
@@ -36,8 +38,8 @@ export const LoginScreen = ({
   const formMethod = useForm<LoginForm>({
     mode: 'all',
     defaultValues: {
-      username: username ?? '',
-      password: password ?? '',
+      username: data?.infoLogin?.username ?? '',
+      password: data?.infoLogin?.password ?? '',
       rememberMe: false,
     },
   });
@@ -45,8 +47,10 @@ export const LoginScreen = ({
   const login = async () => {
     const isValid = await formMethod.trigger(['username', 'password']);
     if (isValid) {
-      formMethod.handleSubmit(() => {
-        navigate(APP_SCREEN.BOTTOM_TAB_NAV);
+      formMethod.handleSubmit(async form => {
+        dispatch(
+          authenticationActions.login(form, undefined, isRememberAccount),
+        );
       })();
     }
   };

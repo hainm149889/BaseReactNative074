@@ -1,4 +1,6 @@
 export enum SLICE_NAME {
   COUNTER = 'COUNTER_',
   SPLASH = 'SPLASH_',
+  APP = 'APP_',
+  AUTHENTICATION = 'AUTHENTICATION_',
 }

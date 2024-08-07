@@ -1,3 +1,8 @@
+import Actions from '@redux-action-type';
+import {dispatch} from '@utils/redux';
+import {remove} from '@utils/storage';
+import {StorageKey} from '@utils/storage/constants';
+
 type TypesBase =
   | 'bigint'
   | 'boolean'
@@ -45,8 +50,8 @@ export function validResponse<T = any>(response: T) {
   return true;
 }
 
-// export const logout = async () => {
-//   dispatch({ type: Actions.LOGOUT });
-//   await remove(StorageKey.TOKEN);
-//   await remove(StorageKey.USER_AGENT_ID);
-// };
+export const logout = async () => {
+  dispatch({type: Actions.LOGOUT});
+  await remove(StorageKey.TOKEN);
+  await remove(StorageKey.USERNAME);
+};

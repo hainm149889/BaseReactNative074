@@ -1,21 +1,22 @@
 import React from 'react';
 
+import {useHandleLogin} from '@hooks/use-handle-login';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {BottomTabNavigation} from './bottom-tab-navigation';
-import {APP_SCREEN, RootStackParamList} from './screen-types';
-import {NotFound} from '@screens/not-found';
-import {LoginScreen} from '@screens/login';
-import {useSelector} from 'react-redux';
 import {selectIsMountedSplash} from '@redux-selector';
 import {Splash} from '@screens/boot-flash';
+import {LoginScreen} from '@screens/login';
+import {NotFound} from '@screens/not-found';
 import {RegisterScreen} from '@screens/register';
+import {useSelector} from 'react-redux';
+import {BottomTabNavigation} from './bottom-tab-navigation';
+import {APP_SCREEN, RootStackParamList} from './screen-types';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 export const RootNavigation = () => {
   const isMountedSplash = useSelector(selectIsMountedSplash);
 
-  const hasToken = false;
+  const isLoadedPermission = useHandleLogin();
 
   return (
     <RootStack.Navigator
@@ -32,7 +33,7 @@ export const RootNavigation = () => {
           />
         </RootStack.Group>
       )}
-      {!hasToken ? (
+      {!isLoadedPermission ? (
         <RootStack.Group
           screenOptions={{
             freezeOnBlur: true,

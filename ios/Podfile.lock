@@ -1296,6 +1296,8 @@ PODS:
     - React-utils (= 0.74.4)
   - RNBootSplash (6.1.0):
     - React-Core
+  - RNCAsyncStorage (1.24.0):
+    - React-Core
   - RNReanimated (3.14.0):
     - DoubleConversion
     - glog
@@ -1422,6 +1424,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNBootSplash (from `../node_modules/react-native-bootsplash`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -1574,6 +1577,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNBootSplash:
     :path: "../node_modules/react-native-bootsplash"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -1654,6 +1659,7 @@ SPEC CHECKSUMS:
   React-utils: e8b0eac797c81c574b24f6515fec4015599b643c
   ReactCommon: eebffb37a90138c6db6eb8b2d952e7e5c6bc083c
   RNBootSplash: 7abfdb0e67dd2316dde619a54d5ef68b13e39b5f
+  RNCAsyncStorage: ec53e44dc3e75b44aa2a9f37618a49c3bc080a7a
   RNReanimated: f4ff116e33e0afc3d127f70efe928847c7c66355
   RNScreens: d2a12528d1abe4922e7ee5c9a00dd40c827c2ab5
   SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d

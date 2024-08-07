@@ -5,3 +5,7 @@ export type CounterState = {
 export interface SplashState {
   isMounted: boolean;
 }
+
+export interface AuthenticationState {
+  token: string | undefined;
+}

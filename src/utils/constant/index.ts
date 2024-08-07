@@ -14,3 +14,35 @@ export const HitSlop = {
 };
 
 export const ModalWidth = UnistylesRuntime.screen.width - scale(48);
+
+/**
+ * @seller: Người bán thịt
+ * @buyer: Người mua hàng
+ * @supplier: Các lò mổ
+ */
+
+export enum RoleAccount {
+  seller = 'Seller',
+  buyer = 'Buyer',
+  supplier = 'Supplier',
+}
+
+export type RoleDetail = {
+  text: string;
+  key: RoleAccount;
+};
+
+export const RoleDetails: Record<RoleAccount, RoleDetail> = {
+  [RoleAccount.seller]: {
+    key: RoleAccount.seller,
+    text: 'Bán hàng',
+  },
+  [RoleAccount.buyer]: {
+    key: RoleAccount.buyer,
+    text: 'Mua hàng',
+  },
+  [RoleAccount.supplier]: {
+    key: RoleAccount.supplier,
+    text: 'Cung cấp hàng',
+  },
+};

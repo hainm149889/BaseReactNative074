@@ -8,11 +8,14 @@ import {LoginScreen} from '@screens/login';
 import {useSelector} from 'react-redux';
 import {selectIsMountedSplash} from '@redux-selector';
 import {Splash} from '@screens/boot-flash';
+import {RegisterScreen} from '@screens/register';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 export const RootNavigation = () => {
   const isMountedSplash = useSelector(selectIsMountedSplash);
+
+  const hasToken = false;
 
   return (
     <RootStack.Navigator
@@ -29,17 +32,29 @@ export const RootNavigation = () => {
           />
         </RootStack.Group>
       )}
-      <RootStack.Group>
-        <RootStack.Screen
-          name={APP_SCREEN.LOGIN_SCREEN}
-          component={LoginScreen}
-        />
-        <RootStack.Screen
-          name={APP_SCREEN.BOTTOM_TAB_NAV}
-          component={BottomTabNavigation}
-        />
-        <RootStack.Screen name={APP_SCREEN.NOT_FOUND} component={NotFound} />
-      </RootStack.Group>
+      {!hasToken ? (
+        <RootStack.Group
+          screenOptions={{
+            freezeOnBlur: true,
+          }}>
+          <RootStack.Screen
+            name={APP_SCREEN.LOGIN_SCREEN}
+            component={LoginScreen}
+          />
+          <RootStack.Screen
+            name={APP_SCREEN.REGISTER_SCREEN}
+            component={RegisterScreen}
+          />
+        </RootStack.Group>
+      ) : (
+        <RootStack.Group>
+          <RootStack.Screen
+            name={APP_SCREEN.BOTTOM_TAB_NAV}
+            component={BottomTabNavigation}
+          />
+          <RootStack.Screen name={APP_SCREEN.NOT_FOUND} component={NotFound} />
+        </RootStack.Group>
+      )}
     </RootStack.Navigator>
   );
 };

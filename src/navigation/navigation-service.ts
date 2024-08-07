@@ -1,4 +1,4 @@
-import {createRef} from 'react';
+import { createRef } from 'react';
 
 import {
   CommonActions,
@@ -8,7 +8,7 @@ import {
   Route,
   StackActions,
 } from '@react-navigation/native';
-import {APP_SCREEN, RootStackParamList} from './screen-types';
+import { APP_SCREEN, RootStackParamList } from './screen-types';
 
 export const navigationRef =
   createRef<NavigationContainerRef<RootStackParamList>>();
@@ -16,8 +16,8 @@ export const navigationRef =
 export function navigate<RouteName extends keyof RootStackParamList>(
   ...arg: undefined extends RootStackParamList[RouteName]
     ?
-        | [screen: RouteName]
-        | [screen: RouteName, params?: RootStackParamList[RouteName]]
+    | [screen: RouteName]
+    | [screen: RouteName, params?: RootStackParamList[RouteName]]
     : [screen: RouteName, params: RootStackParamList[RouteName]]
 ) {
   if (APP_SCREEN[arg[0]]) {
@@ -33,8 +33,8 @@ export function navigate<RouteName extends keyof RootStackParamList>(
 export function push<RouteName extends keyof RootStackParamList>(
   ...arg: undefined extends RootStackParamList[RouteName]
     ?
-        | [screen: RouteName]
-        | [screen: RouteName, params?: RootStackParamList[RouteName]]
+    | [screen: RouteName]
+    | [screen: RouteName, params?: RootStackParamList[RouteName]]
     : [screen: RouteName, params: RootStackParamList[RouteName]]
 ) {
   navigationRef.current?.dispatch(
@@ -45,8 +45,8 @@ export function push<RouteName extends keyof RootStackParamList>(
 export function replace<RouteName extends keyof RootStackParamList>(
   ...arg: undefined extends RootStackParamList[RouteName]
     ?
-        | [screen: RouteName]
-        | [screen: RouteName, params?: RootStackParamList[RouteName]]
+    | [screen: RouteName]
+    | [screen: RouteName, params?: RootStackParamList[RouteName]]
     : [screen: RouteName, params: RootStackParamList[RouteName]]
 ) {
   navigationRef.current?.dispatch(
@@ -77,8 +77,8 @@ type ResetState =
   | PartialState<NavigationState>
   | NavigationState
   | (Omit<NavigationState, 'routes'> & {
-      routes: Omit<Route<string>, 'key'>[];
-    });
+    routes: Omit<Route<string>, 'key'>[];
+  });
 
 export function reset(params: ResetState) {
   navigationRef.current?.dispatch(CommonActions.reset(params));

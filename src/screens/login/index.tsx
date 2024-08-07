@@ -1,7 +1,7 @@
 import {Images} from '@assets/images';
 import {Header} from '@components/header';
 import {navigate} from '@navigation/navigation-service';
-import {APP_SCREEN} from '@navigation/screen-types';
+import {APP_SCREEN, RootStackParamList} from '@navigation/screen-types';
 import {createStyleSheet, useStyles} from '@theme';
 import {AntIcon, FeatherIcon, IoniconsIcon} from '@theme/vector-icons';
 import {ActiveOpacity, HairlineWidth, HitSlop} from '@utils/constant';
@@ -18,12 +18,17 @@ import {
 } from 'react-native';
 import {UnistylesRuntime} from 'react-native-unistyles';
 import {LoginForm} from './type';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-export const LoginScreen = () => {
+export const LoginScreen = ({
+  route,
+}: NativeStackScreenProps<RootStackParamList, APP_SCREEN.LOGIN_SCREEN>) => {
   const {
     styles,
     theme: {colors},
   } = useStyles(styleSheet);
+
+  const {username, password} = route.params.infoLogin;
 
   const [viewPass, setViewPass] = useState(false);
   const [isRememberAccount, setIsRememberAccount] = useState(true);
@@ -31,8 +36,8 @@ export const LoginScreen = () => {
   const formMethod = useForm<LoginForm>({
     mode: 'all',
     defaultValues: {
-      username: '',
-      password: '',
+      username: username ?? '',
+      password: password ?? '',
       rememberMe: false,
     },
   });

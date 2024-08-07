@@ -7,3 +7,5 @@ export * from './not-found';
 export * from './login';
 
 export * from './boot-flash';
+
+export * from './register';

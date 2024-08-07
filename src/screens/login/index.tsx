@@ -56,7 +56,6 @@ export const LoginScreen = ({
   };
 
   const navToRegister = () => {
-    //@ts-ignore
     navigate(APP_SCREEN.REGISTER_SCREEN);
   };
 

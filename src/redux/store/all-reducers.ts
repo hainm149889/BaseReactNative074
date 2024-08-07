@@ -1,9 +1,10 @@
 import Actions from '@redux-action-type';
-import {authenticationReducer, counterReducer} from '@redux-slice';
+import {appReducer, authenticationReducer, counterReducer} from '@redux-slice';
 import {splashReducer} from '@redux/action-slice/splash';
 import {combineReducers} from '@reduxjs/toolkit';
 
 const combinedReducers = combineReducers({
+  app: appReducer,
   counter: counterReducer,
   splash: splashReducer,
   authentication: authenticationReducer,

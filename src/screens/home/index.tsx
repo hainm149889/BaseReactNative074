@@ -11,7 +11,7 @@ export const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header centerContent={<Text>HomeScreen</Text>} />
+      <Header centerContent={<Text>HomeScreen</Text>} style={styles.header} />
       <View style={[ms.flex1]}>
         <TouchableOpacity activeOpacity={ActiveOpacity} onPress={logout}>
           <Text>Logout</Text>
@@ -24,10 +24,13 @@ export const HomeScreen = () => {
   );
 };
 
-const styleSheet = createStyleSheet(({textPresets}) => ({
+const styleSheet = createStyleSheet(({textPresets, colors}) => ({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
+    backgroundColor: colors.LightGray,
+  },
+  header: {
+    backgroundColor: colors.White,
   },
   title: {
     color: 'red',

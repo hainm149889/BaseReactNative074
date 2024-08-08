@@ -1,7 +1,7 @@
+import Actions from '@redux-action-type';
 import {AuthenticationState} from '@redux/type';
 import {createAction, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {SLICE_NAME} from './constant';
-import Actions from '@redux-action-type';
 import {LoginForm} from '@screens/login/type';
 
 const initialState: AuthenticationState = {
@@ -22,12 +22,19 @@ const login = createAction(
   Actions.LOGIN,
   /**
    * @param body data đăng nhập, thường là username và password
+   * @param onFailure callback khi đăng nhập thất bại
    * @param onSucceeded callback khi đăng nhập thành công
    * @param isRemember có ghi nhớ tài khoản hay k
    */
-  (body: LoginForm, onSucceeded?: () => void, isRemember?: boolean) => ({
+  (
+    body: LoginForm,
+    onFailure: (msg: string) => void,
+    onSucceeded?: () => void,
+    isRemember?: boolean,
+  ) => ({
     payload: {
       body,
+      onFailure,
       onSucceeded,
       isRemember,
     },

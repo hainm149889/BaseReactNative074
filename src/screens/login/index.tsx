@@ -21,6 +21,7 @@ import {
 } from 'react-native';
 import {UnistylesRuntime} from 'react-native-unistyles';
 import {LoginForm} from './type';
+import {showModalConfirm} from '@components/modal-confirm';
 
 export const LoginScreen = ({
   route,
@@ -40,7 +41,6 @@ export const LoginScreen = ({
     defaultValues: {
       username: data?.infoLogin?.username ?? '',
       password: data?.infoLogin?.password ?? '',
-      rememberMe: false,
     },
   });
 
@@ -49,7 +49,18 @@ export const LoginScreen = ({
     if (isValid) {
       formMethod.handleSubmit(async form => {
         dispatch(
-          authenticationActions.login(form, undefined, isRememberAccount),
+          authenticationActions.login(
+            form,
+            () => {
+              showModalConfirm({
+                t18nTitle: 'modal_confirm:wrong_account',
+                t18nSubtitle: 'modal_confirm:please_try_again',
+                t18nCancel: 'modal_confirm:close',
+              });
+            },
+            undefined,
+            isRememberAccount,
+          ),
         );
       })();
     }

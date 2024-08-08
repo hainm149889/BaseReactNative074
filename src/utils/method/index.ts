@@ -55,3 +55,24 @@ export const logout = async () => {
   await remove(StorageKey.TOKEN);
   await remove(StorageKey.USERNAME);
 };
+
+export const handleErrorApi = (status: number | string) => {
+  const _status = Number(status);
+  const result = {status: false, code: status, msg: ''};
+
+  if (_status > 505) {
+    result.msg = 'Lỗi server connection';
+
+    return result;
+  }
+
+  if (_status < 500 && _status >= 418) {
+    result.msg = 'Lỗi request format';
+
+    return result;
+  }
+
+  result.msg = 'error:' + status;
+
+  return result;
+};

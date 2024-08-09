@@ -1,14 +1,15 @@
 import {Images} from '@assets/images';
 import {Header} from '@components/header';
 import {navigate} from '@navigation/navigation-service';
-import {APP_SCREEN, RootStackParamList} from '@navigation/screen-types';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {APP_SCREEN} from '@navigation/screen-types';
 import {authenticationActions} from '@redux-slice';
 import {createStyleSheet, useStyles} from '@theme';
 import {AntIcon, FeatherIcon, IoniconsIcon} from '@theme/vector-icons';
 import {ActiveOpacity, HairlineWidth, HitSlop} from '@utils/constant';
 import {dispatch} from '@utils/redux';
 import {scale} from '@utils/scale';
+import {load} from '@utils/storage';
+import {StorageKey} from '@utils/storage/constants';
 import React, {useState} from 'react';
 import {Controller, FormProvider, useForm} from 'react-hook-form';
 import {
@@ -22,15 +23,13 @@ import {
 import {UnistylesRuntime} from 'react-native-unistyles';
 import {LoginForm} from './type';
 
-export const LoginScreen = ({
-  route,
-}: NativeStackScreenProps<RootStackParamList, APP_SCREEN.LOGIN_SCREEN>) => {
+export const LoginScreen = () => {
   const {
     styles,
     theme: {colors},
   } = useStyles(styleSheet);
 
-  const data = route.params;
+  const data = load(StorageKey.ACCOUNT_INFO);
 
   const [viewPass, setViewPass] = useState(false);
   const [isRememberAccount, setIsRememberAccount] = useState(true);
@@ -40,7 +39,7 @@ export const LoginScreen = ({
     defaultValues: {
       username: data?.infoLogin?.username ?? '',
       password: data?.infoLogin?.password ?? '',
-      rememberMe: false,
+      rememberMe: isRememberAccount,
     },
   });
 

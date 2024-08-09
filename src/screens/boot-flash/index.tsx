@@ -20,7 +20,7 @@ export const Splash = () => {
 
     const timeIdMounted = setTimeout(() => {
       setIsMounted(true);
-    }, 3500);
+    }, 2000);
 
     return () => {
       clearTimeout(timeIdSplash);

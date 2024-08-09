@@ -1,10 +1,11 @@
 import {Header} from '@components/header';
-import {goBack, replace} from '@navigation/navigation-service';
-import {APP_SCREEN} from '@navigation/screen-types';
+import {goBack} from '@navigation/navigation-service';
 import {createStyleSheet, useStyles} from '@theme';
 import {AntIcon, FeatherIcon, IoniconsIcon} from '@theme/vector-icons';
 import {ActiveOpacity, HairlineWidth, HitSlop} from '@utils/constant';
 import {scale} from '@utils/scale';
+import {save} from '@utils/storage';
+import {StorageKey} from '@utils/storage/constants';
 import React, {useState} from 'react';
 import {Controller, FormProvider, useForm} from 'react-hook-form';
 import {
@@ -32,6 +33,7 @@ export const RegisterScreen = () => {
     defaultValues: {
       role: null,
       numberPhone: null,
+      fullname: '',
       username: '',
       password: '',
     },
@@ -50,7 +52,8 @@ export const RegisterScreen = () => {
     ]);
     if (isValid) {
       formMethod.handleSubmit(form => {
-        replace(APP_SCREEN.LOGIN_SCREEN, {infoLogin: form});
+        save(StorageKey.ACCOUNT_INFO, form);
+        goBack();
       })();
     }
   };
@@ -80,6 +83,46 @@ export const RegisterScreen = () => {
             <View style={styles.questionContainer}>
               <Text style={styles.ques}>Vui lòng nhập thông tin phía dưới</Text>
               <View style={styles.recordInfo}>
+                <Controller
+                  control={formMethod.control}
+                  name="fullname"
+                  rules={{
+                    required: true,
+                    minLength: 3,
+                    maxLength: 20,
+                  }}
+                  render={({field: {value, onChange, onBlur}}) => {
+                    return (
+                      <View>
+                        <TextInput
+                          style={styles.input}
+                          onChangeText={onChange}
+                          onBlur={onBlur}
+                          value={value}
+                          maxLength={20}
+                          placeholder="Tên đầy đủ"
+                          returnKeyType="done"
+                          placeholderTextColor={colors.LightGray}
+                          onSubmitEditing={() =>
+                            formMethod.setFocus('password')
+                          }
+                        />
+                        {value.length > 0 && (
+                          <Pressable
+                            onPress={() => onChange('')}
+                            style={styles.btnClear}
+                            hitSlop={HitSlop.Medium}>
+                            <AntIcon
+                              name="closecircle"
+                              size={16}
+                              color={colors.DarkGray}
+                            />
+                          </Pressable>
+                        )}
+                      </View>
+                    );
+                  }}
+                />
                 <Controller
                   control={formMethod.control}
                   name="username"

@@ -65,7 +65,7 @@ const BottomTabNav = memo(
             tabBarIcon: ({focused}) => (
               <TabBarIcon
                 // icon={focused ? 'ff_rr_home_fill' : 'ff_rr_home'}
-                text="Home"
+                text="Trang chủ"
                 focused={focused}
               />
             ),
@@ -78,7 +78,7 @@ const BottomTabNav = memo(
             tabBarIcon: ({focused}) => (
               <TabBarIcon
                 // icon={focused ? 'fi_sr_search_alt' : 'fi_rr_search_alt'}
-                text="Profile"
+                text="Cá nhân"
                 focused={focused}
               />
             ),

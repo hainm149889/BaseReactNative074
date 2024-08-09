@@ -1,7 +1,7 @@
 import {Header} from '@components/header';
 import {createStyleSheet, useStyles} from '@theme';
 import {ms} from '@theme/my-style';
-import {ActiveOpacity} from '@utils/constant';
+import {ActiveOpacity, HairlineWidth} from '@utils/constant';
 import {logout} from '@utils/method';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
@@ -11,7 +11,10 @@ export const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header centerContent={<Text>HomeScreen</Text>} style={styles.header} />
+      <Header
+        centerContent={<Text style={styles.titleScreen}>Trang chủ</Text>}
+        style={styles.header}
+      />
       <View style={[ms.flex1]}>
         <TouchableOpacity activeOpacity={ActiveOpacity} onPress={logout}>
           <Text>Logout</Text>
@@ -24,13 +27,21 @@ export const HomeScreen = () => {
   );
 };
 
-const styleSheet = createStyleSheet(({textPresets, colors}) => ({
+const styleSheet = createStyleSheet(({textPresets, colors, shadows}) => ({
   container: {
     flex: 1,
-    backgroundColor: colors.LightGray,
+    backgroundColor: colors.White,
   },
   header: {
     backgroundColor: colors.White,
+    borderBottomWidth: HairlineWidth,
+    borderBottomColor: colors.LightGray,
+    ...shadows['.3'],
+  },
+  titleScreen: {
+    color: colors.Black,
+    ...textPresets.Font20,
+    fontWeight: '600',
   },
   title: {
     color: 'red',

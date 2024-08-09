@@ -1,5 +1,4 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {LoginParams} from './type';
 
 export enum APP_SCREEN {
   BOTTOM_TAB_NAV = 'BOTTOM_TAB_NAV',
@@ -16,7 +15,7 @@ export type RootStackParamList = {
   [APP_SCREEN.HOME_SCREEN]: undefined;
   [APP_SCREEN.PROFILE_SCREEN]: undefined;
   [APP_SCREEN.NOT_FOUND]: undefined;
-  [APP_SCREEN.LOGIN_SCREEN]: LoginParams;
+  [APP_SCREEN.LOGIN_SCREEN]: undefined;
   [APP_SCREEN.SPLASH_SCREEN]: undefined;
   [APP_SCREEN.REGISTER_SCREEN]: undefined;
 };

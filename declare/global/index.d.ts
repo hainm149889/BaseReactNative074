@@ -1,5 +1,4 @@
-import { HttpStatusCode } from 'axios';
-import { z } from 'zod';
+import {HttpStatusCode} from 'axios';
 
 export {};
 declare module 'react' {
@@ -22,24 +21,18 @@ declare global {
         type: string;
         payload: T;
       };
-  type ZodShape<T> = {
-    // Require all the keys from T
-    [key in keyof T]-?: undefined extends T[key]
-      ? // When optional, require the type to be optional in zod
-        z.ZodOptionalType<z.ZodType<T[key]>>
-      : z.ZodType<T[key]>;
-  };
+
   type CustomOmit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
   type NestedNavigatorParams<ParamList> = {
     [K in keyof ParamList]: undefined extends ParamList[K]
-      ? { screen: K; params?: ParamList[K] }
-      : { screen: K; params: ParamList[K] };
+      ? {screen: K; params?: ParamList[K]}
+      : {screen: K; params: ParamList[K]};
   }[keyof ParamList];
 
   type IncludeMatchingProperties<T, V> = Pick<
     T,
-    { [K in keyof T]-?: T[K] extends V ? K : never }[keyof T]
+    {[K in keyof T]-?: T[K] extends V ? K : never}[keyof T]
   >;
 
   type RequireAtLeastOne<T, Keys extends keyof T = keyof T> = Pick<

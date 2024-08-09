@@ -71,6 +71,6 @@ const styleSheet = createStyleSheet(({spacings, colors}) => ({
       : selected
       ? colors.DarkViolet
       : colors.DarkGray,
-    ...textPresets.Font20,
+    ...textPresets.Font20Reg,
   }),
 }));

@@ -199,7 +199,7 @@ const styleSheet = createStyleSheet(
     },
     titleScreen: {
       color: colors.White,
-      ...textPresets.Font20,
+      ...textPresets.Font20Reg,
       fontWeight: '600',
     },
     mainContent: {
@@ -210,7 +210,7 @@ const styleSheet = createStyleSheet(
     },
     txtWelcome: {
       color: colors.White,
-      ...textPresets.Font32,
+      ...textPresets.Font32Reg,
       textAlign: 'center',
       fontWeight: '700',
     },
@@ -249,7 +249,7 @@ const styleSheet = createStyleSheet(
       borderRadius: scale(8),
       color: colors.White,
       borderColor: colors.LightGray,
-      ...textPresets.Font16,
+      ...textPresets.Font16Reg,
     },
     btnClear: {
       position: 'absolute',
@@ -263,7 +263,7 @@ const styleSheet = createStyleSheet(
     },
     txtRememberMe: {
       color: colors.White,
-      ...textPresets.Font16,
+      ...textPresets.Font16Reg,
     },
     register: {
       flexDirection: 'row',

@@ -62,7 +62,7 @@ const styleSheet = createStyleSheet(({spacings, colors, textPresets}) => ({
   },
   totalMoney: {
     color: colors.Black,
-    ...textPresets.Font20,
+    ...textPresets.Font20Reg,
     fontWeight: '600',
     textAlign: 'right',
   },

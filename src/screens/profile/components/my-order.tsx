@@ -54,7 +54,7 @@ export const MyOrders = () => {
 const styleSheet = createStyleSheet(({spacings, colors, textPresets}) => ({
   topic: {
     color: colors.Black,
-    ...textPresets.Font20,
+    ...textPresets.Font20Reg,
     fontWeight: '600',
   },
   topic2: {

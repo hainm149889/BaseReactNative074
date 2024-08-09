@@ -41,7 +41,7 @@ const styleSheet = createStyleSheet(({colors, textPresets, shadows}) => ({
   },
   titleScreen: {
     color: colors.Black,
-    ...textPresets.Font20,
+    ...textPresets.Font20Reg,
     fontWeight: '600',
   },
 }));

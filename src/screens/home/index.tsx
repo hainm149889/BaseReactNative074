@@ -40,16 +40,14 @@ const styleSheet = createStyleSheet(({textPresets, colors, shadows}) => ({
   },
   titleScreen: {
     color: colors.Black,
-    ...textPresets.Font20,
-    fontWeight: '600',
+    ...textPresets.Font20Bold,
   },
   title: {
     color: 'red',
-    ...textPresets.Font32,
-    fontWeight: '700',
+    ...textPresets.Font32Reg,
   },
   title2: {
     color: 'red',
-    ...textPresets.Font24,
+    ...textPresets.Font24Reg,
   },
 }));

@@ -12,16 +12,32 @@ export const MyAccount = () => {
   const accountInfo = load(StorageKey.ACCOUNT_INFO);
 
   const renderRole = (role: RoleAccount) => {
+    let objRole = {image: '', text: ''};
     switch (role) {
       case RoleAccount.seller:
-        return {image: Images.store, text: 'Người bán hàng'};
+        objRole = {image: Images.store, text: 'Người bán hàng'};
+        break;
 
       case RoleAccount.supplier:
-        return {image: Images.supplier, text: 'Nhà cung cấp'};
+        objRole = {image: Images.supplier, text: 'Nhà cung cấp'};
+        break;
 
       default:
-        return {image: Images.buyer, text: 'Người mua hàng'};
+        objRole = {image: Images.buyer, text: 'Người mua hàng'};
+        break;
     }
+
+    return (
+      <View style={styles.roleInfo}>
+        <Image
+          //@ts-ignore
+          source={objRole.image}
+          style={styles.roleImg}
+          resizeMode="cover"
+        />
+        <Text>{objRole.text ?? 'Buyer'}</Text>
+      </View>
+    );
   };
 
   return (
@@ -40,14 +56,7 @@ export const MyAccount = () => {
           </View>
         </View>
         <View style={styles.roleContainer}>
-          <View style={styles.roleInfo}>
-            <Image
-              source={renderRole(accountInfo?.role).image}
-              style={styles.roleImg}
-              resizeMode="cover"
-            />
-            <Text>{renderRole(accountInfo?.role).text ?? 'Buyer'}</Text>
-          </View>
+          {renderRole(accountInfo?.role)}
         </View>
       </View>
     </View>

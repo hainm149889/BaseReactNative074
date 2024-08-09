@@ -167,12 +167,12 @@ const styleSheet = createStyleSheet(({colors, spacings, textPresets}) => ({
     width: flexDirection === 'row' ? undefined : '100%',
   }),
   title: {
-    ...textPresets.Font20,
+    ...textPresets.Font12Reg,
     textAlign: 'center',
     colors: colors.Black,
   },
   subtitle: {
-    ...textPresets.Font14,
+    ...textPresets.Font14Bold,
     textAlign: 'center',
     colors: colors.DarkGray,
     marginTop: spacings[2],

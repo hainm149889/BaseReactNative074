@@ -228,12 +228,12 @@ const styleSheet = createStyleSheet(({spacings, textPresets}) => ({
     marginTop: spacings[12],
   },
   title: {
-    ...textPresets.Font20,
+    ...textPresets.Font20Reg,
     textAlign: 'center',
     color: 'black',
   },
   subtitle: {
     textAlign: 'center',
-    ...textPresets.Font14,
+    ...textPresets.Font14Reg,
   },
 }));

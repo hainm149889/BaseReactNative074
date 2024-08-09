@@ -46,7 +46,7 @@ const styleSheet = createStyleSheet(
     },
     topic: {
       color: colors.Black,
-      ...textPresets.Font20,
+      ...textPresets.Font20Reg,
       fontWeight: '600',
     },
     listTopic: {

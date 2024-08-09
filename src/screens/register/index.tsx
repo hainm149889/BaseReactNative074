@@ -264,7 +264,7 @@ const styleSheet = createStyleSheet(
     },
     titleScreen: {
       color: colors.Black,
-      ...textPresets.Font20,
+      ...textPresets.Font20Reg,
       fontWeight: '600',
     },
     header: {
@@ -282,7 +282,7 @@ const styleSheet = createStyleSheet(
     },
     ques: {
       color: colors.Black,
-      ...textPresets.Font20,
+      ...textPresets.Font20Reg,
       fontWeight: '600',
     },
     contentContainerScrollView: {
@@ -298,7 +298,7 @@ const styleSheet = createStyleSheet(
       borderRadius: scale(8),
       color: colors.Black,
       borderColor: colors.LightGray,
-      ...textPresets.Font16,
+      ...textPresets.Font16Reg,
     },
     btnClear: {
       position: 'absolute',

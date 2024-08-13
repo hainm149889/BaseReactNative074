@@ -1,6 +1,8 @@
 import {createStyleSheet, useStyles} from '@theme';
 import {EntypoIcon} from '@theme/vector-icons';
-import {ActiveOpacity} from '@utils/constant';
+import {ActiveOpacity, RoleAccount} from '@utils/constant';
+import {load} from '@utils/storage';
+import {StorageKey} from '@utils/storage/constants';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 
@@ -10,6 +12,33 @@ export const MyUserFollowing = () => {
     theme: {colors},
   } = useStyles(styleSheet);
 
+  const accountInfo = load(StorageKey.ACCOUNT_INFO);
+
+  const renderTopic = (role: RoleAccount) => {
+    switch (role) {
+      case RoleAccount.seller:
+        return {
+          option1: 'Nhà cung cấp',
+          option2: 'Khách hàng',
+          option3: 'Bạn bè',
+        };
+
+      case RoleAccount.supplier:
+        return {
+          option1: 'Nhà cung cấp',
+          option2: 'Cửa hàng',
+          option3: 'Bạn bè',
+        };
+
+      default:
+        return {
+          option1: 'Nhà cung cấp',
+          option2: 'Cửa hàng',
+          option3: 'Bạn bè',
+        };
+    }
+  };
+
   return (
     <View style={styles.topic1}>
       <Text style={styles.topic}>Danh sách theo dõi của bạn</Text>
@@ -18,19 +47,25 @@ export const MyUserFollowing = () => {
           activeOpacity={ActiveOpacity}
           style={styles.optionContainer}>
           <EntypoIcon name="shop" size={20} color={colors.Black} />
-          <Text>Nhà cung cấp</Text>
+          <Text>{renderTopic(accountInfo?.role).option1}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={ActiveOpacity}
           style={styles.optionContainer}>
-          <EntypoIcon name="home" size={20} color={colors.Black} />
-          <Text>Cửa hàng</Text>
+          <EntypoIcon
+            name={
+              accountInfo?.role === RoleAccount.seller ? 'slideshare' : 'home'
+            }
+            size={20}
+            color={colors.Black}
+          />
+          <Text>{renderTopic(accountInfo?.role).option2}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={ActiveOpacity}
           style={styles.optionContainer}>
           <EntypoIcon name="users" size={20} color={colors.Black} />
-          <Text>Bạn bè</Text>
+          <Text>{renderTopic(accountInfo?.role).option3}</Text>
         </TouchableOpacity>
       </View>
     </View>

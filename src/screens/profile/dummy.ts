@@ -1,3 +1,6 @@
+/**
+ * Chi tiết của sản phẩm mà người mua đã mua
+ */
 export type OrderByBuyer = {
   key: number;
   name: string;
@@ -10,6 +13,133 @@ export type OrderByBuyer = {
   sellerPhone: string;
 };
 
+/**
+ * Chi tiết của 1 đơn vị sản phẩm mà người bán đã mua
+ */
+export type UnitDetails = {
+  key: number;
+  number: number;
+  cage: number;
+  imageUnit: string | null;
+  kg: number;
+  imageKg: string | null;
+};
+
+/**
+ * Chi tiết của sản phẩm mà người bán đã mua
+ */
+export type OrdersBySeller = {
+  key: number;
+  name: string;
+  supplier: string;
+  addressSupplier: string;
+  phoneSupplier: string;
+  numberBuy: number;
+  details: UnitDetails[];
+  unit: string;
+  priceBase: number;
+  dateBuy: string;
+};
+
+/**
+ * Danh sách sản phẩm mà người bán đã mua
+ */
+export const listOrdersWithRoleSeller = [
+  {
+    key: 1,
+    name: 'Lợn nái',
+    supplier: 'Lò Chấn Đông',
+    addressSupplier: 'Chấn Đống, Hoàn Long, Yên Mỹ, Hưng Yên',
+    phoneSupplier: '0912121209',
+    numberBuy: 3,
+    dateBuy: '17:36 12/06/2024',
+    details: [
+      {
+        key: 1,
+        number: 12,
+        cage: 1,
+        imageUnit: null,
+        kg: 93.5,
+        imageKg: null,
+      },
+      {
+        key: 2,
+        number: 13,
+        cage: 1,
+        imageUnit: null,
+        kg: 92,
+        imageKg: null,
+      },
+      {
+        key: 3,
+        number: 12,
+        cage: 2,
+        imageUnit: null,
+        kg: 89,
+        imageKg: null,
+      },
+    ],
+    unit: 'con',
+    priceBase: 90_000,
+  },
+  {
+    key: 2,
+    name: 'Lợn thịt',
+    supplier: 'Lò Thái Linh',
+    addressSupplier: 'Từ Hồ, Yên Mỹ, Hưng Yên',
+    phoneSupplier: '0977445532',
+    dateBuy: '08:40 21/06/2024',
+    numberBuy: 5,
+    details: [
+      {
+        key: 1,
+        number: 10,
+        cage: 1,
+        imageUnit: null,
+        kg: 93.5,
+        imageKg: null,
+      },
+      {
+        key: 2,
+        number: 12,
+        cage: 2,
+        imageUnit: null,
+        kg: 92,
+        imageKg: null,
+      },
+      {
+        key: 3,
+        number: 18,
+        cage: 3,
+        imageUnit: null,
+        kg: 89,
+        imageKg: null,
+      },
+      {
+        key: 4,
+        number: 12,
+        cage: 2,
+        imageUnit: null,
+        kg: 83,
+        imageKg: null,
+      },
+      {
+        key: 5,
+        number: 12,
+        cage: 1,
+        imageUnit: null,
+        kg: 97,
+        imageKg: null,
+      },
+    ],
+    unit: 'con',
+    priceBase: 91_000,
+  },
+];
+
+/**
+ * Danh sách sản phẩm mà người mua đã mua
+ */
 export const listOrdersWithRoleBuyer: Array<OrderByBuyer> = [
   {
     key: 1,

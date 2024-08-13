@@ -1,11 +1,11 @@
 import {Header} from '@components/header';
 import {createStyleSheet, useStyles} from '@theme';
+import {HairlineWidth} from '@utils/constant';
 import React from 'react';
 import {Text, View} from 'react-native';
+import {MyAccount} from './components/my-account';
 import {MyOrders} from './components/my-order';
 import {MyUserFollowing} from './components/my-user-following';
-import {HairlineWidth} from '@utils/constant';
-import {MyAccount} from './components/my-account';
 
 export const MyProfile = () => {
   const {styles} = useStyles(styleSheet);

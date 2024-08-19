@@ -23,6 +23,7 @@ import {
 } from 'react-native-tab-view';
 import {UnistylesRuntime} from 'react-native-unistyles';
 import {ListBuy} from './seller/list-buy';
+import {ListSell} from './seller/list-sell';
 
 const TabName = {
   BUY: 'BUY',
@@ -90,11 +91,7 @@ export const MyOrders = () => {
           return <ListBuy />;
 
         case TabName.SELL:
-          return (
-            <View>
-              <Text>Sell</Text>
-            </View>
-          );
+          return <ListSell />;
       }
     },
     [],
@@ -125,11 +122,6 @@ export const MyOrders = () => {
   const renderTopic = (role: RoleAccount) => {
     switch (role) {
       case RoleAccount.seller:
-        return {
-          option1: 'Dánh sách đơn hàng bạn đã bán',
-          option2: 'Số tiền bạn đã bán được trong tháng 7: ',
-        };
-
       case RoleAccount.supplier:
         return {
           option1: 'Dánh sách đơn hàng bạn đã bán',

@@ -19,6 +19,7 @@
     "@react-navigation/native-stack": "^6.11.0",
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.3",
+    "dayjs": "^1.11.12",
     "expo": "^51.0.0",
     "expo-image": "~1.12.13",
     "lodash.clonedeep": "^4.5.0",

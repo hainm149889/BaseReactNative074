@@ -16,13 +16,7 @@ export const MyUserFollowing = () => {
 
   const renderTopic = (role: RoleAccount) => {
     switch (role) {
-      case RoleAccount.seller:
-        return {
-          option1: 'Nhà cung cấp',
-          option2: 'Khách hàng',
-          option3: 'Bạn bè',
-        };
-
+      case RoleAccount.buyer:
       case RoleAccount.supplier:
         return {
           option1: 'Nhà cung cấp',
@@ -33,7 +27,7 @@ export const MyUserFollowing = () => {
       default:
         return {
           option1: 'Nhà cung cấp',
-          option2: 'Cửa hàng',
+          option2: 'Khách hàng',
           option3: 'Bạn bè',
         };
     }
